@@ -8,14 +8,14 @@ public class Movement : MonoBehaviour
 	[SerializeField] private float movementSpeedMultiplier = 0.2f;
 	[SerializeField] private float rotationSpeedMultiplier = 4f;
 
-	private void UpdateMovement(float[] vectorAction)
+	public void UpdateMovement(float[] vectorAction)
 	{
 		Vector3 movement = Vector3.zero;
+		movement.z = vectorAction[1];
+		transform.Translate(movement * movementSpeedMultiplier);
+
 		Vector3 turning = Vector3.zero;
 		turning.y = vectorAction[0];
-		movement.z = vectorAction[1];
-
-		transform.Translate(movement * movementSpeedMultiplier);
 		transform.Rotate(turning * rotationSpeedMultiplier);
 	}
 }

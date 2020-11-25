@@ -9,7 +9,8 @@ public class Survivor : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		nutritionLevel += other.gameObject.GetComponent<Food>()?.Consume() ?? 0;
+		nutritionLevel += other.transform.parent.GetComponent<Food>()?.Consume() ?? 0;
+		print(nutritionLevel);
 	}
 
 }

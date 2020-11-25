@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-	private float nutritionalValue = 0.2f;
+	private readonly float nutritionalValue = 0.2f;
 
 	public float Consume()
 	{
-		Destroy(gameObject);
+		FoodPool.Instance.ReturnToPool(this);
 		return nutritionalValue;
 	}
 }

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 10571336}
   m_Layer: 0
-  m_Name: _Managers
+  m_Name: _Utilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,6 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 744694433}
+  - {fileID: 1924215087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -170,8 +171,10 @@ GameObject:
   - component: {fileID: 506437332}
   - component: {fileID: 506437330}
   - component: {fileID: 506437331}
+  - component: {fileID: 506437334}
+  - component: {fileID: 506437335}
   m_Layer: 0
-  m_Name: Person
+  m_Name: Survivor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,8 +252,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 573182964}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -284,12 +286,6 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  movementSpeedMultiplier: 0.2
-  rotationSpeedMultiplier: 4
-  viewConeMaxRadius: 10
-  viewConeMaxDistance: 10
-  viewConeAngle: 60
-  debugFoodSelectionIndicator: {fileID: 2540664928381882872, guid: 7bba645fdfc22e9479ca7037e7731b79, type: 3}
 --- !u!114 &506437332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +326,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &506437334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506437325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4743c2344c9108340a682b8529488991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeedMultiplier: 0.2
+  rotationSpeedMultiplier: 4
+--- !u!114 &506437335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506437325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321c02bd5c289c54abeacd0d92373a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &538076012
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,12 +460,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573182961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -4.8}
+  m_LocalRotation: {x: -0.46057817, y: 0.09736921, z: -0.050911248, w: -0.88079226}
+  m_LocalPosition: {x: 11.180468, y: 56.48665, z: -41.020523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 506437329}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &573182965
 MonoBehaviour:
@@ -579,7 +601,7 @@ GameObject:
   - component: {fileID: 744694433}
   - component: {fileID: 744694432}
   m_Layer: 0
-  m_Name: FoodManager
+  m_Name: FoodManagement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,10 +616,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 744694431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5122103a1b1aa4896544e1e6d5d1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 267234687390a834b8c5460b9bed0f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodPrefab: {fileID: 8897647188047125626, guid: ae97ec1a1b7423c438cf4bdd699eec9a, type: 3}
+  prefab: {fileID: 760729835768791418, guid: ae97ec1a1b7423c438cf4bdd699eec9a, type: 3}
 --- !u!4 &744694433
 Transform:
   m_ObjectHideFlags: 0
@@ -725,3 +747,62 @@ Transform:
   m_Father: {fileID: 538076013}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1924215086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1924215087}
+  - component: {fileID: 1924215089}
+  - component: {fileID: 1924215088}
+  m_Layer: 0
+  m_Name: SurvivorManagement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1924215087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924215086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 10571336}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1924215088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924215086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987f3409370e0454e987a88a49ed5432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool: {fileID: 0}
+  intervalSeconds: 2
+--- !u!114 &1924215089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924215086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267234687390a834b8c5460b9bed0f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 760729835768791418, guid: ae97ec1a1b7423c438cf4bdd699eec9a, type: 3}
