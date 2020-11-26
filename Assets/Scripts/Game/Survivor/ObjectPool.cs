@@ -6,13 +6,7 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 {
 	[SerializeField] private T prefab;
 
-	public static ObjectPool<T> Instance { get; private set; }
 	private Queue<T> objects = new Queue<T>();
-
-	private void Awake()
-	{
-		Instance = this;
-	}
 
 	public T GetObject()
 	{
@@ -20,7 +14,7 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 		return objects.Dequeue();
 	}
 
-	public void ReturnToPool(T objectToReturn)
+	protected void ReturnToPool(T objectToReturn)
 	{
 		objectToReturn.gameObject.SetActive(false);
 		objects.Enqueue(objectToReturn);

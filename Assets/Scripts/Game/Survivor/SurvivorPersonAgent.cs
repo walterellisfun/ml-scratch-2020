@@ -4,12 +4,12 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 
-[RequireComponent(typeof(DecisionRequester), typeof(Movement))]
+//[RequireComponent(typeof(DecisionRequester), typeof(Movement))]
 public class SurvivorPersonAgent : Agent
 {
 	private Movement movement;
 
-	private void Start()
+	private void Awake()
 	{
 		movement = GetComponent<Movement>();
 	}

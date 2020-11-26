@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BigBall.unity
+    path: Assets/Scenes/MLAgentsDrafts/BigBall.unity
     guid: 423ab45fa6af48c4c9d7bfa32f033e41
   m_configObjects: {}
